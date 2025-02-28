@@ -1,0 +1,65 @@
+### Selenium自动化测试概览
+
+1. #### 自动化测试简介
+
+   - ##### 自动化测试四象限
+
+     - <img src="C:\Users\hp\Documents\WeChat Files\wxid_t5y8hrcb8f3522\FileStorage\Temp\1932a28fd3a08261f9494c571111334.jpg" alt="IMAGE 1-1" style="zoom:33%;" />
+
+     - 第三象限的测试通常只能以手工方式进行，面向业务和评估产品
+     - **通常的自动化测试都是在第一象限第二象限的自动化测试**，但不是全程自动化，需考虑成效比
+       - 合理的自动化测试用例的分布
+         - <img src="C:\Users\hp\Documents\WeChat Files\wxid_t5y8hrcb8f3522\FileStorage\Temp\e26be9cf1a9a9dc62daf3de64192cae.jpg" alt="IMAGE 1-2" style="zoom:33%;" />
+         - 顶部到底部：少而精的UI测试 $\rightarrow$  适量的API测试 $\rightarrow $ 大量的单元测试
+         - **越往上越接近真实业务**，自动化测试的成本越高，反馈周期越长
+         - 自动化测试的整体搭配**越接近金字塔形，自动化程度越高，收益越高**。
+
+   - ##### Selenium发展史
+
+     - <img src="C:\Users\hp\Documents\WeChat Files\wxid_t5y8hrcb8f3522\FileStorage\Temp\f421bd1dd664b85f795091f1d05a8ad.jpg" alt="IMAGE 1-3" style="zoom:33%;" />
+     - WebDriver：相比于Selenium RC 仅模拟用户操作，WebDriver支持原生操作实现。
+     - Selenium Grid：在多机器上执行并行测试的平台
+
+2. ##### Selenium工具集及其使用
+
+   - **Selenium本质上是由多种工具聚合在一起的多功能测试工具集**
+
+     1. **Selenium IDE**
+
+        - 一款浏览器插件，类似录音机，有**录制**（自动记录用户在浏览器的一系列操作步骤（如点击、输入等）并生成对应的代码脚本
+
+          ```PY
+              // Selenium IDE 自动生成的代码（简化版）
+              click("id=username");  
+              type("id=username", "testuser");  
+              type("id=password", "password123");  
+              click("id=login-button");  
+          
+          ```
+
+          和**回放**（根据已录制的代码脚本进行自动重复测试）功能。
+
+        - 适合简单场景测试，不适合复杂场景（如动态元素测试，条件判断/循环）。简单场景如下：
+          - 发现BUG时，创建**BUG重现脚本**提交给开发人员，提升沟通效率
+          - 在执行**手工探索式测试**等情况下，通过录制回放操作实现半自动化，提升手工验证效率。
+          - 针对某个新功能的手工测试用例，创建轻量级、临时性的回归测试，提升测试效率。
+          - 录制操作后**导出脚本**，节省自动化测试代码的编写时间，提升编程效率。
+          - 其他一些非测试性场景，例如抢票操作、抢购操作、刷浏览量或下载量等。
+        - 基本操作
+          1. 录制与回放
+          2. 保存回放文件（.side格式
+          3. 添加测试验证（如assert element present ，验证元素是否在指定位置）
+          4. 导出测试脚本，保存为Python pytest代码文件
+        - 高级运用
+
+          - 
+
+     2. **Selenium WebDriver**
+
+     3. **Selenium Grid**
+
+     4. **Appium**
+
+        
+     
+        
